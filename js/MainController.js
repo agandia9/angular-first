@@ -3,7 +3,7 @@ app.controller("MainController", function($scope){
 	$scope.title = "Welcome to my CalcAPP";
 	$scope.secTitle = "Calculator V. 1.0"
 	//here the historial of operations...
-	$scope.history = [];
+
 })
 app.controller("CalcController", function($scope, myFactory){
 	$scope.calc1 = function(){
