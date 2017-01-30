@@ -13,10 +13,10 @@
 
 <body>
 	<div ng-controller="MainController">
-		<h1>{{title}} <small>made by: @agandia9</small></h1>
+		<h1>{{title}} 👻 <small>Calculator project for Angular begginers </small></h1>
 		<div class="main">
 			<h2>{{secTitle}}</h2>
-			<p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam harum at, dolores numquam in sed cumque molestiae, cum error. Vero, et natus quasi porro dolorem. Numquam officiis et temporibus non.</span></p>
+			<p><span>Calculator made in Angular 1.5.8</span></p>
 		</div>
 	</div>
 	<div ng-controller="CalcController" class="calc">
@@ -31,7 +31,17 @@
 			<button ng-click="result('op3')"> x </button>
 			<button ng-click="result('op4')"> / </button>
 		</div>
+		<div>
+			<h2><small>History: </small></h2>
+		</div>
 	</div>
+	<footer>
+		<div class="footer">
+			<div class="panel-footer">
+				<p>made by: @agandia9</p>
+			</div>
+		</div>
+	</footer>
 
 	<!-- jQuery stuff -->
 	<script>

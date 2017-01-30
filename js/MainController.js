@@ -1,6 +1,6 @@
 var app = angular.module("myApp", ["calcService"]);
 app.controller("MainController", function($scope) {
-	$scope.title = "Welcome to my CalcAPP";
+	$scope.title = "Welcome CalcAPP";
 	$scope.secTitle = "Calculator V. 1.0"
 		//here the historial of operations...
 	$scope.history = [];
