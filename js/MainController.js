@@ -12,4 +12,10 @@ app.controller("CalcController", function($scope, myFactory){
 	$scope.calc2 = function(){
 		$scope.rest = myFactory.methodRest($scope.firstOp, $scope.secOp);
 	}
+	$scope.calc3 = function(){
+		$scope.mult = myFactory.methodMult($scope.firstOp, $scope.secOp);
+	}
+	$scope.calc4 = function(){
+		$scope.div = myFactory.methodDiv($scope.firstOp, $scope.secOp);
+	}
 })
