@@ -21,18 +21,16 @@
 	</div>
 	<div ng-controller="CalcController" class="calc">
 		<input type="text" ng-model="firstOp">
-		<input type="text" ng-model="secOp">
+		<p> {{symbol}} </p> 
+		<input type="text" ng-model="secOp"> 
+		<p> = {{operationRes}} </p>
 		<div>
 			<h2><small>Operations: </small></h2>
-			<button ng-click="calc1()"> + </button>
-			<button ng-click="calc2()"> - </button>
-			<button ng-click="calc3()"> x </button>
-			<button ng-click="calc4()"> / </button>
+			<button ng-click="result('op1')"> + </button>
+			<button ng-click="result('op2')"> - </button>
+			<button ng-click="result('op3')"> x </button>
+			<button ng-click="result('op4')"> / </button>
 		</div>
-		<h2><small>Results Sum: {{sum}}</small></h2>
-		<h2><small>Results Rest: {{rest}}</small></h2>
-		<h2><small>Results Multiplitation: {{mult}}</small></h2>
-		<h2><small>Results Divisor: {{div}}</small></h2>
 	</div>
 
 	<!-- jQuery stuff -->
