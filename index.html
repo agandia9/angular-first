@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="myApp">
+
 <head>
 	<meta charset="UTF-8">
 	<title>Proj. Angular</title>
@@ -7,27 +8,50 @@
 	<link rel="stylesheet" href="css/styles.css">
 	<link href='https://fonts.googleapis.com/css?family=Roboto:500,300,700,400' rel='stylesheet' type='text/css'>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 </head>
+
 <body>
 	<div ng-controller="MainController">
 		<h1>{{title}} <small>made by: @agandia9</small></h1>
-		<h2>{{secTitle}}</h2>
-		<p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam harum at, dolores numquam in sed cumque molestiae, cum error. Vero, et natus quasi porro dolorem. Numquam officiis et temporibus non.</span></p>
+		<div class="main">
+			<h2>{{secTitle}}</h2>
+			<p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam harum at, dolores numquam in sed cumque molestiae, cum error. Vero, et natus quasi porro dolorem. Numquam officiis et temporibus non.</span></p>
+		</div>
 	</div>
 	<div ng-controller="CalcController" class="calc">
-		<input type="text" ng-model="firstOp"> 
+		<input type="text" ng-model="firstOp">
 		<input type="text" ng-model="secOp">
 		<div>
 			<h2><small>Operations: </small></h2>
-		<button ng-click="calc1()"> + </button>
-		<button ng-click="calc2()"> - </button>
-		<button ng-click="calc3()"> x </button>
-		<button ng-click="calc4()"> / </button>
+			<button ng-click="calc1()"> + </button>
+			<button ng-click="calc2()"> - </button>
+			<button ng-click="calc3()"> x </button>
+			<button ng-click="calc4()"> / </button>
 		</div>
-		<h2><small>Results: {{sum}} , {{rest}}, {{mult}}, {{div}}</small></h2>
+		<h2><small>Results Sum: {{sum}}</small></h2>
+		<h2><small>Results Rest: {{rest}}</small></h2>
+		<h2><small>Results Multiplitation: {{mult}}</small></h2>
+		<h2><small>Results Divisor: {{div}}</small></h2>
 	</div>
 
+	<!-- jQuery stuff -->
+	<script>
+	function resizeInput() {
+		if ($(this).val().length === 0) {
+			$(this).attr('size', 2);
+		} else {
+			$(this).attr('size', $(this).val().length);
+		}
+
+	}
+
+	$('input[type="text"]')
+		// event handler
+		.keyup(resizeInput)
+		// resize on page load
+		.each(resizeInput);
+	</script>
 	<!-- Angular files -->
 	<script type="text/javascript" src="js/app.js"></script>
 	<script type="text/javascript" src="js/MainController.js"></script>
