@@ -1,9 +1,9 @@
 body {
 	margin-left: 150px;
-    padding: 0;
-    font-family: 'Quicksand', sans-serif;
-    width: 75%;
-    margin-bottom: 50px;
+	padding: 0;
+	font-family: 'Quicksand', sans-serif;
+	width: 75%;
+	margin-bottom: 50px;
 }
 
 .main {
@@ -26,6 +26,7 @@ body {
 	font-size: 40px;
 	text-align: center;
 	height: 50px;
+	width: 200px;
 	background-color: #f4f2f2;
 	padding: 0px;
 	margin-bottom: 3px;
@@ -42,17 +43,20 @@ body {
 	border-radius: 12px;
 	font-size: 28px;
 }
+
 .calc ul {
 	width: 300px;
 	color: #919191;
 	font-size: 18px;
 	margin-bottom: 60px;
 }
-.calc li{
+
+.calc li {
 	font-family: 'Quicksand', sans-serif;
 	color: #919191;
 	font-size: 17px
 }
+
 .footer {
 	position: fixed;
 	height: 60px;

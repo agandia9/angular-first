@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="myApp">
-
 <head>
 	<meta charset="UTF-8">
 	<title>Proj. Angular</title>
@@ -10,7 +9,6 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 </head>
-
 <body>
 	<div ng-controller="MainController">
 		<h1>{{title}} 👻 <small>Calculator project for Angular begginers </small></h1>
@@ -20,23 +18,22 @@
 		</div>
 	</div>
 	<div ng-controller="CalcController" class="calc">
-		<input type="text" ng-model="firstOp">
+		<input type="number" ng-model="firstOp">
 		<p> {{symbol}} </p> 
-		<input type="text" ng-model="secOp"> 
+		<input type="number" ng-model="secOp"> 
 		<p> = {{operationRes}} </p>
 		<div>
 			<h2><small>Operations: </small></h2>
-			<button ng-click="result('op1')"> ➕ </button>
-			<button ng-click="result('op2')"> ➖ </button>
-			<button ng-click="result('op3')"> ✖️ </button>
-			<button ng-click="result('op4')"> ➗ </button>
+			<button ng-click="sum()"> ➕ </button>
+			<button ng-click="rest()"> ➖ </button>
+			<button ng-click="mult()"> ✖️ </button>
+			<button ng-click="div()"> ➗ </button>
 		</div>
 		<div>
 			<h2><small>History: </small></h2>
 			<ul class="list-unstyled">Operations count: {{history.length}}
 				<li ng-repeat="operations in history track by $index">{{operations}} 	✔️
 			</ul>
-			
 		</div>
 	</div>
 	<footer>
@@ -46,7 +43,6 @@
 			</div>
 		</div>
 	</footer>
-
 	<!-- jQuery stuff -->
 	<script>
 	function resizeInput() {
@@ -56,7 +52,7 @@
 			$(this).attr('size', $(this).val().length);
 		}
 	}
-	$('input[type="text"]')
+	$('input[type="number"]')
 		// event handler
 		.keyup(resizeInput)
 		// resize on page load

@@ -1,35 +1,28 @@
 angular.module('calcService', [])
 	.factory('myFactory', function() {
 		var history = []; 
-		var calcSum = function(firstOp, secOp) {
-			var total = parseInt(firstOp) + parseInt(secOp);
-			var historyStr = firstOp + ' + ' + secOp + ' = ' + total;
-			history.push(historyStr) 
-			return Math.round(total * 100) / 100
+		const ops = {
+			sum: (a,b) => a+b,
+			subs: (a,b) => a-b,
+			mult: (a,b) => a*b,
+			div: (a,b) => a/b
 		}
-		var calcRest = function(firstOp, secOp) {
-			var total2 = parseInt(firstOp) - parseInt(secOp);
-			var historyStr = firstOp + ' - ' + secOp + ' = ' + total2;
-			history.push(historyStr) 
-			return Math.round(total2 * 100) / 100
+		const symbols = {
+			sum: '+',
+			subs: '-',
+			mult: 'x',
+			div: '/'
 		}
-		var calcMult = function(firstOp, secOp) {
-			var total3 = parseInt(firstOp) * parseInt(secOp);
-			var historyStr = firstOp + ' x ' + secOp + ' = ' + total3;
-			history.push(historyStr) 
-			return Math.round(total3 * 100) / 100
-		}
-		var calcDiv = function(firstOp, secOp) {
-			var total4 = parseInt(firstOp) / parseInt(secOp);
-			var historyStr = firstOp + ' / ' + secOp + ' = ' + total4;
-			history.push(historyStr) 
-			return Math.round(total4 * 100) / 100
-		}
+		function operate(op, x, y) {
+			const result = Math.round(ops[op](x,y) * 100) / 100;
+			const str = x + ' ' + symbols[op] + ' ' + y + ' = ' + result;
+			history.push(str)
+			return result;
+		} 
 		return {
-			methodSum : calcSum,
-			methodRest : calcRest,
-			methodMult : calcMult,
-			methodDiv : calcDiv,
+			operate : operate,
 			history: history
 		}
 	});
+
+// myFactory.operate("mult",3,5)
