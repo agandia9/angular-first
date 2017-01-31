@@ -16,10 +16,16 @@ angular.module('calcService', [])
 			var total4 = parseInt(firstOp) / parseInt(secOp);
 			return Math.round(total4 * 100) / 100
 		}
+		var makeHistory = function(firstOp, secOp){
+			var newOperation = firstOp + ' ' + secOp
+			return newOperation; 
+		}
 		return {
 			methodSum : calcSum,
 			methodRest : calcRest,
 			methodMult : calcMult,
-			methodDiv : calcDiv
+			methodDiv : calcDiv,
+			methodHistory: makeHistory
+
 		}
 	});
