@@ -1,1 +1,2 @@
-# Angular project
+# Angular mini-project 
+## CalcAPP
