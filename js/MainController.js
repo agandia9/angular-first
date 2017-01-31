@@ -4,9 +4,8 @@ app.controller("MainController", function($scope) {
 	$scope.secTitle = "Calculator V. 1.0"
 })
 app.controller("CalcController", function($scope, myFactory) {
-	$scope.history = [];
+	$scope.history = myFactory.history;
 	$scope.result = function(param) {
-		console.log(param)
 		if (param === 'op1') {
 			$scope.operationRes = myFactory.methodSum($scope.firstOp, $scope.secOp);
 			$scope.symbol = '+';
@@ -20,8 +19,5 @@ app.controller("CalcController", function($scope, myFactory) {
 			$scope.operationRes = myFactory.methodDiv($scope.firstOp, $scope.secOp);
 			$scope.symbol = '/';
 		}
-		// after operation, push the history
-		var makeStr = myFactory.methodHistory($scope.firstOp, $scope.secOp).replace(/\s/g, " " + $scope.symbol + " ");
-		$scope.history.push(makeStr + ' = ' + $scope.operationRes);
 	}
 })

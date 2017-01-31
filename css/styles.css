@@ -45,13 +45,13 @@ body {
 .calc ul {
 	width: 300px;
 	color: #919191;
-	font-size: 20px;
+	font-size: 18px;
 	margin-bottom: 60px;
 }
 .calc li{
 	font-family: 'Quicksand', sans-serif;
 	color: #919191;
-	font-size: 18px
+	font-size: 17px
 }
 .footer {
 	position: fixed;
