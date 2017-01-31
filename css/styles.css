@@ -1,7 +1,7 @@
 body {
 	margin-left: 150px;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     width: 75%;
     margin-bottom: 50px;
 }
@@ -40,16 +40,18 @@ body {
 	width: 50px;
 	height: 50px;
 	border-radius: 12px;
-	font-size: 30px;
-	text-align: center;
+	font-size: 28px;
 }
 .calc ul {
 	width: 300px;
+	color: #919191;
+	font-size: 20px;
+	margin-bottom: 60px;
 }
 .calc li{
-	font-family: 'Roboto', sans-serif;
-	color: black;
-	font-size: 20px
+	font-family: 'Quicksand', sans-serif;
+	color: #919191;
+	font-size: 18px
 }
 .footer {
 	position: fixed;
