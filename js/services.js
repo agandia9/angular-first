@@ -14,15 +14,20 @@ angular.module('calcService', [])
 			div: '/'
 		}
 		function operate(op, x, y) {
-			const result = Math.round(ops[op](x,y) * 100) / 100;
+			let result = Math.round(ops[op](x,y) * 100) / 100;
 			const str = x + ' ' + symbols[op] + ' ' + y + ' = ' + result;
-			history.push(str)
-			return result;
-		} 
+			console.log(result)
+			if (isNaN(result)) {
+				console.log("wtf")
+				result = "Magic fail... 😅 "
+				return result
+			}else{
+				history.push(str)
+				return result
+			}
+		}
 		return {
 			operate : operate,
 			history: history
 		}
 	});
-
-// myFactory.operate("mult",3,5)
