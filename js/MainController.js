@@ -22,3 +22,4 @@ app.controller("CalcController", function($scope, myFactory) {
 		$scope.symbol = '/';
 	}
 });
+
